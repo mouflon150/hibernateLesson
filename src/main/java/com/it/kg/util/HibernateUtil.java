@@ -10,9 +10,9 @@ public class HibernateUtil {
     private static SessionFactory buildSessionFactory() {
 
         try {
-            return new Configuration().configure("configure.cfg.xml").buildSessionFactory();
+            return new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         } catch (Throwable ex) {
-            System.out.println("Session not created " + ex);
+            System.out.println("Session not created: " + ex);
             throw new ExceptionInInitializerError(ex);
         }
     }
